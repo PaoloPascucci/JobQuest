@@ -1,27 +1,25 @@
-# AAA
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+# JobQuest
+Benvenuto in JobQuest, qui potrai trovare tutto ciò che riguarda gli annunci di lavoro in stile RolePlayGame 🧙🏻‍♂️
+Questo progetto è stato creato con [Angular CLI](https://github.com/angular/angular-cli) versione 14.2.13.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Avvia il dev server con `npm run fullstack serve`. Naviga all'interno di `http://localhost:4200/`. 
 
-## Code scaffolding
+## Registrati e Entra ⚔️
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Compila il form di Registrazione e inizia a selezionare la tua Quest 📜 (i tuoi dati verrano salvati in locale)
 
-## Build
+## Ricerca 📜
+Ricerca la Quest che più ti interessa 🔍 o la Gilda a cui iscriverti! 🛡️
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Home 📋
+Qui potrai vedere le quest principali e addentrarti nel tuo profilo 👤
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Profilo 👤
+Dipendentemente da come ti sei registrato, potrai consultare le quest a cui hai fatto richiesta (se sei un Avventuriero 🧙‍♂️) oppure potrai esaminare le richieste degli avventurieri alle tue quest poste in bacheca (se sei una Gilda 🔰)
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Per ulteriori informazioni su Angular CLI usa `ng help` o controlla la pagina [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
