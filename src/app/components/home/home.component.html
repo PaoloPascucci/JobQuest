@@ -1,1 +1,11 @@
-<p>Home Page</p>
+<h1>Benvenuto in JobQuest</h1>
+<h2>Qui potrai trovare la quest inerenti al tuo impiego</h2>
+<div *ngFor="let item of quests">
+    <div class="card m-2">
+        <div class="card-body">
+            <h4 class="card-title">{{item.titolo}}</h4>
+            <p class="card-text">{{item.descrizione}}</p>
+            <p>{{item.data}}</p>
+        </div>
+    </div>
+</div>

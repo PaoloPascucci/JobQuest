@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="col-4">
+        <div>
+            <ul class="list-group">
+                <li>Nome: {{utente.user.nome}}</li>
+                <li>Cognome: {{utente.user.cognome}}</li>
+                <li>Email: {{utente.user.email}}</li>
+                <li>Tipo: {{utente.user.type}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-8">
+        <div *ngIf="utente.user.type === 'azienda'">            
+            <div *ngFor="let item of quests">
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.titolo}}</h4>
+                        <p class="card-text">{{item.descrizione}}</p>
+                        <p>{{item.data}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -5,7 +5,7 @@ export interface AuthData {
         email:string;
         nome:string;
         cognome:string;
-        //type:string;
+        type:string;
     }
 }
 

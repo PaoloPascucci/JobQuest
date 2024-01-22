@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 import { TokenInterceptor } from "./auth/token.interceptor";
 import { RouterModule, Route } from '@angular/router';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Route[] = [
   {
@@ -22,6 +23,12 @@ const routes: Route[] = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+
+  {
+    path: 'profile',
+    canActivate:[AuthGuard],
+    component: ProfileComponent,
   },
 
   {
@@ -39,7 +46,8 @@ const routes: Route[] = [
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

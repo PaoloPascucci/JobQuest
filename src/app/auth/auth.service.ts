@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
   jwtH = new JwtHelperService();
   apiUrl = environment.apiURL;
-  
+
   private authSubj = new BehaviorSubject<null | AuthData>(null);
   user$ = this.authSubj.asObservable();
   utente!: AuthData;
@@ -38,16 +38,16 @@ export class AuthService {
   //   }
   //   return JSON.parse(user);
   // }
-  // getUserId() {
-  //   const user = localStorage.getItem('user');
-  //   if (!user) {
-  //     console.log('user non esistente');
-  //     return;
-  //   }
-  //   const userData: AuthData = JSON.parse(user);
+  getUserId() {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      console.log('user non esistente');
+      return;
+    }
+    const userData: AuthData = JSON.parse(user);
 
-  //   return userData.user.id;
-  // }
+    return userData.user.id;
+  }
   login(data: { email: string; password: string }) {
     return this.http.post<AuthData>(`${this.apiUrl}/login`, data).pipe(
       tap((loggato) => {
@@ -57,7 +57,7 @@ export class AuthService {
         //console.log(this.utente);
         localStorage.setItem('user', JSON.stringify(loggato));
         //console.log(this.user$);
-        alert("Login Effettuato")
+        alert('Login Effettuato');
         this.router.navigate(['/']);
       }),
       catchError(this.errors)
@@ -67,7 +67,7 @@ export class AuthService {
   restore() {
     const user = localStorage.getItem('user');
     console.log(user);
-    
+
     if (!user) {
       this.router.navigate(['/login']);
       return;
