@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "email": "paolo@paolo.com",
+      "password": "$2a$10$x/a0WAmWnAla4JhsFsTNy.tuUDSGMOw8uM2H.JdjD/MSpQOJvDnZ2",
+      "nome": "paolo",
+      "cognome": "paolo",
+      "type":"lavoratore",
+      "id": 1
+    },
+    {
+      "email": "admin@admin.com",
+      "password": "$2a$10$x/a0WAmWnAla4JhsFsTNy.tuUDSGMOw8uM2H.JdjD/MSpQOJvDnZ2",
+      "nome": "admin",
+      "cognome": "admin",
+      "type":"azienda",
+      "id": 1
+    }
+  ],
+  "quest": [
+    {
+      "id": 1,
+      "titolo": "Impiegato Bancario",
+      "descrizione": "Si ricerca un impiegato bancario con almeno 3 anni di esperienza nel settore.",
+      "data": "16/01/2020"
+    }
+  ]
+}
