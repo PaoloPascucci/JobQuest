@@ -18,6 +18,7 @@ export class RequestComponent implements OnInit {
   utente!: AuthData | null;
   allUsers!: any[];
   showSuccessMessage = false;
+  requestList: Request[] = [];
   constructor(
     private authSrv: AuthService,
     private fb: FormBuilder,
@@ -38,6 +39,14 @@ export class RequestComponent implements OnInit {
     this.authSrv.getAllUser().subscribe((all) => {
       this.allUsers = all;
     });
+    this.questSrv.getRequest().subscribe(
+      (requests) => {
+        this.requestList = requests;
+      },
+      (error) => {
+        console.error('Errore nella get delle richieste', error);
+      }
+    );
   }
   loadQuest() {
     if (this.user !== null) {

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container d-flex mt-2">
     <div class="col-4">
         <div>
             <ul class="list-group">
@@ -10,9 +10,9 @@
         </div>
     </div>
     <div class="col-8">
-        <div *ngIf="utente.user.type === 'azienda'">
-            <div class="col-10" *ngFor="let item of quests">
-                <div class="card m-2">
+        <div *ngIf="utente.user.type === 'azienda'" class="d-flex">
+            <div class="col-10" >
+                <div class="card m-2" *ngFor="let item of quests">
                     <div class="card-body">
                         <h4 class="card-title">{{item.titolo}}</h4>
                         <p class="card-text">{{item.descrizione}}</p>
@@ -22,6 +22,19 @@
             </div>
             <div class="col-2">
                 <button class="btn btn-primary" (click)="checkRequest()">Controlla le richieste alle quest</button>
+            </div>
+        </div>
+        <div *ngIf="utente.user.type === 'lavoratore'">
+            <div *ngFor="let item of requestList" >
+                <div class="card" [ngClass]="item.colore">     
+                    <div class="card-body" >
+                        <h4 class="card-title">{{ item.titolo }}</h4>
+                        <p class="card-text">{{ item.desc }}</p>
+                    </div>
+                    <div class="card-button m-3">
+                     <button class="btn btn-primary" (click)="seeRequest(item.id)">See</button>
+                    </div>
+                </div>                
             </div>
         </div>
     </div>

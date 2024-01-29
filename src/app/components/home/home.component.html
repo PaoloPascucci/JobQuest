@@ -8,9 +8,12 @@
             <p>{{item.data}}</p>
         </div>
         <div class="card-button">
-            <a [routerLink]="['/quests', item.id]" routerLinkActive="active">See</a>
-            <!-- <a>Modifica</a>
-            <a>Elimina</a> -->
+            <a class="btn btn-outline-primary" [routerLink]="['/quests', item.id]" routerLinkActive="active">See</a>
+            <ng-container *ngIf="utente && utente.user.id === item.userId; else noButtons">
+                <button class="btn btn-primary" (click)="modificaQuest(item)">Modifica</button>
+            <button class="btn btn-danger" (click)="eliminaQuest(item)">Elimina</button>
+            </ng-container>
+            <ng-template #noButtons></ng-template>  
         </div>
     </div>
 </div>

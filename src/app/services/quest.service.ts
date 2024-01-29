@@ -13,11 +13,14 @@ import { Router } from '@angular/router';
 export class QuestService {
   api = environment.apiURL;
   single!: Quest;
-  constructor(private http: HttpClient, private router:Router) {}
+  private requestStates: Record<number, 'accepted' | 'rejected'> = {};
+
+  constructor(private http: HttpClient, private router: Router) {}
   getAllQuest(userId: number) {
     return this.http.get<Quest[]>(`${this.api}/quests?userId=${userId}`);
   }
   getQuest() {
+    console.log('Chiamata a getQuest');
     return this.http.get<Quest[]>(`${this.api}/quests`);
   }
   getSingleQuest(id: number) {
@@ -29,6 +32,9 @@ export class QuestService {
   getRequest() {
     return this.http.get<Request[]>(`${this.api}/requests`);
   }
+  getSingleRequest(id:number) {
+    return this.http.get<Request[]>(`${this.api}/requests/${id}`);
+  }
   requestCreate(data: {
     userId: number;
     titolo: string;
@@ -36,8 +42,44 @@ export class QuestService {
   }): Observable<Request> {
     return this.http.post<Request>(`${this.api}/requests`, data);
   }
-  goBackHome(){
+  goBackHome() {
     this.router.navigate(['/home']);
   }
-  
+  modificaQuest(questId: number, questData: any): Observable<Quest> {
+    return this.http.put<Quest>(`${this.api}/quests/${questId}`, questData);
+  }
+  cancellaQuest(questId: number): Observable<void> {
+    return this.http.delete<void>(`${this.api}/quests/${questId}`);
+  }
+
+  getRequestsByUserId(userId: number): Observable<Request[]> {
+    return this.http.get<Request[]>(`${this.api}/requests?userId=${userId}`);
+  }
+  getAcceptedRequestsByUserId(userId: number): Observable<Request[]> {
+    return this.http.get<Request[]>(
+      `${this.api}/accepted-requests?userId=${userId}`
+    );
+  }
+
+  getRejectedRequestsByUserId(userId: number): Observable<Request[]> {
+    return this.http.get<Request[]>(
+      `${this.api}/rejected-requests?userId=${userId}`
+    );
+  }
+
+  getRequestState(requestId: number): 'accepted' | 'rejected' | undefined {
+    return this.requestStates[requestId];
+  }
+
+  acceptRequest(requestId: number): void {
+    // Esegui l'operazione di accettazione sul backend
+    // Aggiorna lo stato nella memoria del servizio
+    this.requestStates[requestId] = 'accepted';
+  }
+
+  rejectRequest(requestId: number): void {
+    // Esegui l'operazione di rifiuto sul backend
+    // Aggiorna lo stato nella memoria del servizio
+    this.requestStates[requestId] = 'rejected';
+  }
 }

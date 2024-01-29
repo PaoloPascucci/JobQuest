@@ -22,11 +22,7 @@
         </div>
         <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Accedi</button>
       </form>
-      <a [routerLink]="['/password']" class="mb-3 ">Forgot password</a>
-      <hr />
-      <div class="d-flex justify-content-center mb-3">
-        <button class="btn account" (click)="creaAccount()">Crea nuovo account</button>
-      </div>
+      <button class="btn btn-outline-primary account" (click)="creaAccount()">Crea nuovo account</button>
     </div>
   </div>
   

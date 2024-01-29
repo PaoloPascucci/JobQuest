@@ -14,6 +14,8 @@ import { RouterModule, Route } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SingleQuestComponent } from './components/single-quest/single-quest.component';
 import { RequestComponent } from './components/request/request.component';
+import { ModificaQuestComponent } from './components/modifica-quest/modifica-quest.component';
+import { SingleRequestComponent } from './components/single-request/single-request.component';
 
 const routes: Route[] = [
   {
@@ -38,11 +40,16 @@ const routes: Route[] = [
     component: SingleQuestComponent,
   },
   {
+    path: 'modifica-quest/:id',
+    canActivate: [AuthGuard],
+    component: ModificaQuestComponent,
+  },
+  {
     path: 'register',
     component: RegisterComponent,
   },
   { path: 'request', component: RequestComponent, canActivate: [AuthGuard] },
-
+  { path: 'single-request/:id', canActivate: [AuthGuard], component: SingleRequestComponent },
   {
     path: '**',
     redirectTo: '',
@@ -58,6 +65,8 @@ const routes: Route[] = [
     ProfileComponent,
     SingleQuestComponent,
     RequestComponent,
+    ModificaQuestComponent,
+    SingleRequestComponent,
   ],
   imports: [
     BrowserModule,
