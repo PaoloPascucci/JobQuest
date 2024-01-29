@@ -99,7 +99,17 @@ export class AuthService {
     localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
-
+  getAllUser() {
+    return this.http.get<any>(`${this.apiUrl}/users`);
+  }
+  getUser() {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      console.log('user non esistente');
+      return;
+    }
+    return JSON.parse(user);
+  }
   private errors(err: any) {
     console.log(err);
     switch (err.error) {

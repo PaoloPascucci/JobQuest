@@ -5,7 +5,7 @@
       "password": "$2a$10$x/a0WAmWnAla4JhsFsTNy.tuUDSGMOw8uM2H.JdjD/MSpQOJvDnZ2",
       "nome": "paolo",
       "cognome": "paolo",
-      "type":"lavoratore",
+      "type": "lavoratore",
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "password": "$2a$10$x/a0WAmWnAla4JhsFsTNy.tuUDSGMOw8uM2H.JdjD/MSpQOJvDnZ2",
       "nome": "Umana",
       "cognome": "SRL",
-      "type":"azienda",
+      "type": "azienda",
       "id": 2
     },
     {
@@ -21,80 +21,88 @@
       "password": "$2a$10$x/a0WAmWnAla4JhsFsTNy.tuUDSGMOw8uM2H.JdjD/MSpQOJvDnZ2",
       "nome": "Microsoft",
       "cognome": "Corporation",
-      "type":"azienda",
+      "type": "azienda",
       "id": 3
     }
   ],
   "quests": [
     {
-      "userId":2,
+      "userId": 2,
       "id": 1,
       "titolo": "Impiegato Bancario",
       "descrizione": "Si ricerca un impiegato bancario con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":2,
+      "userId": 2,
       "id": 2,
       "titolo": "Impiegato regionale",
       "descrizione": "Si ricerca un impiegato regionale con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":2,
+      "userId": 2,
       "id": 3,
       "titolo": "Fattorino",
       "descrizione": "Si ricerca un Fattorino con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":2,
+      "userId": 2,
       "id": 4,
       "titolo": "Impiegato MetalMeccanico",
       "descrizione": "Si ricerca un impiegato MetalMeccanico con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":2,
+      "userId": 2,
       "id": 5,
       "titolo": "Sviluppatore Front End",
       "descrizione": "Si ricerca uno Sviluppatore Front End con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":3,
+      "userId": 3,
       "id": 6,
       "titolo": "Impiegato Bancario",
       "descrizione": "Si ricerca un impiegato bancario con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":3,
+      "userId": 3,
       "id": 7,
       "titolo": "Impiegato regionale",
       "descrizione": "Si ricerca un impiegato regionale con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":3,
+      "userId": 3,
       "id": 8,
       "titolo": "Fattorino",
       "descrizione": "Si ricerca un Fattorino con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":3,
+      "userId": 3,
       "id": 9,
       "titolo": "Impiegato MetalMeccanico",
       "descrizione": "Si ricerca un impiegato MetalMeccanico con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
     },
     {
-      "userId":3,
+      "userId": 3,
       "id": 10,
       "titolo": "Sviluppatore Front End",
       "descrizione": "Si ricerca uno Sviluppatore Front End con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
+    }
+  ],
+  "requests": [
+    {
+      "userId": 1,
+      "titolo": "Richiesta",
+      "desc": "Sono interessato alla posizione",
+      "id": 1
     }
   ]
 }

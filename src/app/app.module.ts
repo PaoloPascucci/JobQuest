@@ -9,14 +9,16 @@ import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
-import { TokenInterceptor } from "./auth/token.interceptor";
+import { TokenInterceptor } from './auth/token.interceptor';
 import { RouterModule, Route } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SingleQuestComponent } from './components/single-quest/single-quest.component';
+import { RequestComponent } from './components/request/request.component';
 
 const routes: Route[] = [
   {
     path: '',
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     component: HomeComponent,
   },
 
@@ -27,14 +29,20 @@ const routes: Route[] = [
 
   {
     path: 'profile',
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     component: ProfileComponent,
   },
-
+  {
+    path: 'quests/:id',
+    canActivate: [AuthGuard],
+    component: SingleQuestComponent,
+  },
   {
     path: 'register',
     component: RegisterComponent,
   },
+  { path: 'request', component: RequestComponent, canActivate: [AuthGuard] },
+
   {
     path: '**',
     redirectTo: '',
@@ -47,7 +55,9 @@ const routes: Route[] = [
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    SingleQuestComponent,
+    RequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +69,6 @@ const routes: Route[] = [
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <h2>{{quest?.titolo}}</h2>
+            <p>{{quest?.descrizione}}</p>
+            <p>{{quest?.data}}</p>
+            <button (click)="goRequest()">Iscriviti</button>
+        </div>
+
+        <div class="back">
+            <button (click)="goBackHome()">Torna alla home</button>
+        </div>
+    </div>
+</div>

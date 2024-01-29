@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthData } from 'src/app/auth/auth-data';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Quest } from 'src/app/models/quest';
@@ -13,7 +14,7 @@ export class ProfileComponent implements OnInit {
   utente!: any;
   quests: Quest[] = [];
 
-  constructor(private authSrv: AuthService, private questSrv: QuestService) {}
+  constructor(private authSrv: AuthService, private questSrv: QuestService, private router:Router) {}
 
   ngOnInit(): void {
     this.authSrv.user$.subscribe((_user) => {
@@ -24,5 +25,8 @@ export class ProfileComponent implements OnInit {
       this.quests = all;
       console.log(all);
     });
+  }
+  checkRequest(){
+    this.router.navigate(["/request"])
   }
 }

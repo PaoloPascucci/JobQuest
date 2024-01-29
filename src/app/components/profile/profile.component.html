@@ -10,8 +10,8 @@
         </div>
     </div>
     <div class="col-8">
-        <div *ngIf="utente.user.type === 'azienda'">            
-            <div *ngFor="let item of quests">
+        <div *ngIf="utente.user.type === 'azienda'">
+            <div class="col-10" *ngFor="let item of quests">
                 <div class="card m-2">
                     <div class="card-body">
                         <h4 class="card-title">{{item.titolo}}</h4>
@@ -20,7 +20,9 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-2">
+                <button class="btn btn-primary" (click)="checkRequest()">Controlla le richieste alle quest</button>
+            </div>
         </div>
     </div>
 </div>

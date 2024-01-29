@@ -7,5 +7,10 @@
             <p class="card-text">{{item.descrizione}}</p>
             <p>{{item.data}}</p>
         </div>
+        <div class="card-button">
+            <a [routerLink]="['/quests', item.id]" routerLinkActive="active">See</a>
+            <!-- <a>Modifica</a>
+            <a>Elimina</a> -->
+        </div>
     </div>
 </div>
