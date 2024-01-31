@@ -1,19 +1,28 @@
-<h1>Benvenuto in JobQuest</h1>
-<h2>Qui potrai trovare la quest inerenti al tuo impiego</h2>
-<div *ngFor="let item of quests">
-    <div class="card m-2">
-        <div class="card-body">
-            <h4 class="card-title">{{item.titolo}}</h4>
-            <p class="card-text">{{item.descrizione}}</p>
-            <p>{{item.data}}</p>
-        </div>
-        <div class="card-button">
-            <a class="btn btn-outline-primary" [routerLink]="['/quests', item.id]" routerLinkActive="active">See</a>
-            <ng-container *ngIf="utente && utente.user.id === item.userId; else noButtons">
-                <button class="btn btn-primary" (click)="modificaQuest(item)">Modifica</button>
-            <button class="btn btn-danger" (click)="eliminaQuest(item)">Elimina</button>
-            </ng-container>
-            <ng-template #noButtons></ng-template>  
+<h1 class="text-center">Benvenuto in JobQuest</h1>
+<h2 class="text-center">Qui potrai trovare la quest inerenti al tuo impiego</h2>
+<div class="container d-flex flex-wrap">
+    <div class="div col-4" *ngFor="let item of quests">
+        <div class="card m-2">
+            <div class="card-body">
+                <h4 class="card-title">{{item.titolo}}</h4>
+                <p class="card-text">{{item.descrizione}}</p>
+                <p>{{item.data}}</p>
+            </div>
+            <div class="card-button">
+                <a class="btn btn-outline-primary"
+                    [routerLink]="['/quests', item.id]"
+                    routerLinkActive="active"><i class="fas fa-eye"></i></a>
+                <ng-container
+                    *ngIf="utente && utente.user.id === item.userId; else noButtons">
+                    <button class="btn btn-primary"
+                        (click)="modificaQuest(item)"><i
+                            class="fas fa-pencil-alt"></i></button>
+                    <button class="btn btn-danger"
+                        (click)="eliminaQuest(item)"><i
+                            class="fas fa-trash-alt"></i></button>
+                </ng-container>
+                <ng-template #noButtons></ng-template>
+            </div>
         </div>
     </div>
 </div>

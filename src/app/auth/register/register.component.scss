@@ -1,0 +1,14 @@
+.container {
+    margin-top: 80px;
+}
+.form-control {
+    width: calc(100% - 30px);
+    &-select {
+        border-radius: 8px;
+        padding: 5px;
+        border: none;
+    }
+}
+.form {
+    color: white;
+}

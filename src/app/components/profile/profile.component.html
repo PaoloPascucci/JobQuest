@@ -1,16 +1,24 @@
-<div class="container d-flex mt-2">
-    <div class="col-4">
-        <div>
-            <ul class="list-group">
+<div class="container d-flex mt-4">
+    <div class="col-2">
+        <div class="info">
+            <ul class="list-group mt-3">
                 <li>Nome: {{utente.user.nome}}</li>
                 <li>Cognome: {{utente.user.cognome}}</li>
                 <li>Email: {{utente.user.email}}</li>
-                <li>Tipo: {{utente.user.type}}</li>
-            </ul>
+                <ng-container *ngIf="utente.user.type === 'azienda'; else avventuriero">
+                  <li>Tipo: Gilda 🔰</li>
+                </ng-container>
+                <ng-template #avventuriero>
+                  <li>Tipo: Avventuriero 🧙‍♂️</li>
+                </ng-template>
+              </ul>
+              <div class="newQuestContainer" *ngIf="utente.user.type === 'azienda'">
+                <button class="newQuest btn btn-outline-warning" (click)="createNewQuest()"><img src="../../../assets/images/newQuest.png" alt="Create New Quest"></button>
+            </div>
         </div>
     </div>
-    <div class="col-8">
-        <div *ngIf="utente.user.type === 'azienda'" class="d-flex">
+    <div class="col-10">
+        <div *ngIf="utente.user.type === 'azienda'" class="d-flex azienda">
             <div class="col-10" >
                 <div class="card m-2" *ngFor="let item of quests">
                     <div class="card-body">
@@ -22,17 +30,17 @@
             </div>
             <div class="col-2">
                 <button class="btn btn-primary" (click)="checkRequest()">Controlla le richieste alle quest</button>
-            </div>
+            </div>            
         </div>
         <div *ngIf="utente.user.type === 'lavoratore'">
             <div *ngFor="let item of requestList" >
-                <div class="card" [ngClass]="item.colore">     
+                <div class="card mt-3" [ngClass]="item.colore">     
                     <div class="card-body" >
                         <h4 class="card-title">{{ item.titolo }}</h4>
                         <p class="card-text">{{ item.desc }}</p>
                     </div>
                     <div class="card-button m-3">
-                     <button class="btn btn-primary" (click)="seeRequest(item.id)">See</button>
+                     <button class="btn btn-primary" (click)="seeRequest(item.id)"><i class="fas fa-eye"></i></button>
                     </div>
                 </div>                
             </div>

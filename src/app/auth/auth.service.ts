@@ -98,7 +98,7 @@ export class AuthService {
     console.log('Eseguendo logout');
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
   getAllUser() {
     return this.http.get<any>(`${this.apiUrl}/users`);

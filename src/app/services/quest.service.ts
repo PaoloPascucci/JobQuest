@@ -35,10 +35,20 @@ export class QuestService {
   getSingleRequest(id:number) {
     return this.http.get<Request[]>(`${this.api}/requests/${id}`);
   }
+  questCreate(info:{
+    userId: number;
+    titolo: string;
+    descrizione: string;
+    data:string;
+    }): Observable<Quest> {
+      return this.http.post<Quest>(`${this.api}/quests`, info);
+  }
   requestCreate(data: {
     userId: number;
     titolo: string;
     desc: string;
+    colore:string;
+    disabilitaBottoni:boolean;
   }): Observable<Request> {
     return this.http.post<Request>(`${this.api}/requests`, data);
   }
@@ -81,5 +91,9 @@ export class QuestService {
     // Esegui l'operazione di rifiuto sul backend
     // Aggiorna lo stato nella memoria del servizio
     this.requestStates[requestId] = 'rejected';
+  }
+  updateRequest(id: number, updatedData: Partial<Request>): Observable<Request> {
+    const url = `${this.api}/requests/${id}`;
+    return this.http.patch<Request>(url, updatedData);
   }
 }

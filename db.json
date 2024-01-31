@@ -23,6 +23,14 @@
       "cognome": "Corporation",
       "type": "azienda",
       "id": 3
+    },
+    {
+      "email": "pippo@pippo.com",
+      "password": "$2a$10$c3vD7nKNKjr6vicHrYh.ruMOC7TdqUtP5sgIaaQIcUoj7W2svh3va",
+      "nome": "pippo",
+      "cognome": "pippo",
+      "type": "lavoratore",
+      "id": 4
     }
   ],
   "quests": [
@@ -81,6 +89,13 @@
       "titolo": "Sviluppatore Front End",
       "descrizione": "Si ricerca uno Sviluppatore Front End con almeno 3 anni di esperienza nel settore.",
       "data": "16/01/2020"
+    },
+    {
+      "userId": 2,
+      "titolo": "Impiegato Casalingo",
+      "descrizione": "Si ricerca una figura come casalinga con almeno 5 anni di esperienza",
+      "data": "12/12/2022",
+      "id": 11
     }
   ],
   "requests": [
@@ -91,6 +106,30 @@
       "id": 1,
       "colore": "lime",
       "disabilitaBottoni": true
+    },
+    {
+      "userId": 1,
+      "titolo": "Richiesta Impiegato Regionale",
+      "desc": "mi vorrei iscrivere a questa offerta",
+      "id": 2,
+      "colore": "red",
+      "disabilitaBottoni": true
+    },
+    {
+      "userId": 1,
+      "titolo": "bla bla bla ",
+      "desc": "bal bal bla",
+      "colore": "lime",
+      "disabilitaBottoni": false,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "titolo": "ciao ciao ",
+      "desc": "ciao ciuao",
+      "colore": "red",
+      "disabilitaBottoni": false,
+      "id": 4
     }
   ]
 }

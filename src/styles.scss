@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'bootstrap';
+@import "bootstrap";
+
+.btn {
+    margin: 0 5px;
+    padding: 5px;
+}
+body {
+    background-color:#C5A773;    
+}
+//#FFDEA7 quest color
+//#005B4C Navbar
+h1, h2, h3, h4, h5, h6 {
+    color: #FFEECB;
+}
+.mt-80 {
+    margin-top: 80px;
+}

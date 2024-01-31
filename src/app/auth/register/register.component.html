@@ -7,31 +7,33 @@
       <h6 class="d-inline-block mb-0 ms-2"> Attenzione! Si è verificato un problema.</h6>
     </div>
   </div>
-  <div class="container divfuori d-flex align-items-center">
-    <form #form="ngForm" (ngSubmit)="registra(form)">
-      <h2 class="mb-4">Inserisci i tuoi Dati</h2>
-      <div class="form-group">
+  <div class="container divfuori">
+    <form class="form d-flex flex-wrap" #form="ngForm" (ngSubmit)="registra(form)">
+      <h2 class="mb-4 col-12">Inserisci i tuoi Dati</h2>
+      <div class="form-group col-md-6">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" class="form-control mb-4" placeholder="Nome" required ngModel />
+        </div>
+        <div class="form-group col-md-6">
         <label for="cognome">Cognome</label>
         <input type="text" name="cognome" id="cognome" placeholder="Cognome" class="form-control mb-4" required ngModel />
       </div>
-      <div class="form-group">
+      <div class="form-group col-md-12">
+        <label for="type" class="form-label col-12">Impiego</label>
+        <select class="form-control-select mb-3" name="type" id="type">
+            <option value="lavoratore">Avventuriero 🧙‍♂️</option>
+            <option value="azienda">Gilda 🔰</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" placeholder="Email" class="form-control mb-4" required ngModel />
       </div>
-      <div class="form-group">
-        <label for="type">Impiego</label>
-        <select name="type" id="type">
-            <option value="lavoratore">Avventuriero</option>
-            <option value="azienda">Gilda</option>
-        </select>
-      </div>
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" placeholder="Password" class="form-control mb-4" required ngModel />
       </div>
-      <button type="submit" [disabled]="form.invalid" class="btn btn-primary mt-3">Registrati</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-outline-primary">Registrati</button>
     </form>
   </div>
   

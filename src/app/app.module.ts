@@ -16,6 +16,7 @@ import { SingleQuestComponent } from './components/single-quest/single-quest.com
 import { RequestComponent } from './components/request/request.component';
 import { ModificaQuestComponent } from './components/modifica-quest/modifica-quest.component';
 import { SingleRequestComponent } from './components/single-request/single-request.component';
+import { NewQuestComponent } from './components/new-quest/new-quest.component';
 
 const routes: Route[] = [
   {
@@ -49,6 +50,7 @@ const routes: Route[] = [
     component: RegisterComponent,
   },
   { path: 'request', component: RequestComponent, canActivate: [AuthGuard] },
+  { path: 'new-quest', component: NewQuestComponent, canActivate: [AuthGuard] },
   { path: 'single-request/:id', canActivate: [AuthGuard], component: SingleRequestComponent },
   {
     path: '**',
@@ -67,6 +69,7 @@ const routes: Route[] = [
     RequestComponent,
     ModificaQuestComponent,
     SingleRequestComponent,
+    NewQuestComponent,
   ],
   imports: [
     BrowserModule,

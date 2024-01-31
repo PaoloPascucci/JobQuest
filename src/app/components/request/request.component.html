@@ -1,19 +1,19 @@
 <ng-container *ngIf="utente?.user?.type === 'azienda'; else standard">
-  <div class="container">
+  <div class="container mt-80">
     
       <div *ngFor="let item of requestList">
-        <div class="card" [ngClass]="{ 'lime-background': item.colore === 'lime', 'red-background': item.colore === 'red' }">
+        <div class="card mt-3" [ngClass]="{ 'lime-background': item.colore === 'lime', 'red-background': item.colore === 'red' }">
           <h5 class="card-header">{{ item.titolo }}</h5>
           <div class="card-body">
             <p class="card-text">{{ item.desc }}</p>
             <div>
               <!-- Aggiungi qui i bottoni Accetta e Rifiuta, utilizzando [(ngClass)] per gestire i colori -->
-              <button
+              <button class="btn btn-outline-success"
                 (click)="accetta(item)"                
                 *ngIf="!item.disabilitaBottoni">
                 Accetta
               </button>
-              <button
+              <button class="btn btn-outline-danger"
                 (click)="rifiuta(item)"
                 *ngIf="!item.disabilitaBottoni">
                 Rifiuta
@@ -22,7 +22,7 @@
           </div>  
         </div>
       </div>
-    <button (click)="goBack()">Torna alla home</button>
+    <button class="btn btn-outline-primary mt-3" (click)="goBack()">Torna alla home</button>
   </div>
 </ng-container>
 <ng-template #standard>

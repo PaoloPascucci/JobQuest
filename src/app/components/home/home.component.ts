@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
     this.questSrv.getQuest().subscribe(
       (all) => {
-        this.quests = all;
+        this.quests = all.sort((a,b)=> a.userId - b.userId);
       },
       (error) => {
         console.error('erroe nella get dei post', error);

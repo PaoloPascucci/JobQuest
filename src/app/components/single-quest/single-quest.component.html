@@ -1,14 +1,14 @@
-<div class="container">
+<div class="container mt-80">
     <div class="row justify-content-center align-items-center g-2">
         <div class="col">
             <h2>{{quest?.titolo}}</h2>
             <p>{{quest?.descrizione}}</p>
-            <p>{{quest?.data}}</p>
-            <button (click)="goRequest()">Iscriviti</button>
+            <p>{{quest?.data}}</p>            
         </div>
 
-        <div class="back">
-            <button (click)="goBackHome()">Torna alla home</button>
+        <div class="back d-flex justify-content-between">
+            <button *ngIf="utente?.user?.type ==='lavoratore'" class="btn btn-outline-primary" (click)="goRequest()">Iscriviti</button>
+            <button class="btn btn-outline-primary" (click)="goBackHome()">Torna alla home</button>
         </div>
     </div>
 </div>

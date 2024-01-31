@@ -8,3 +8,16 @@
 .red {
     background-color: red;
 }
+.info {
+    position: relative;
+}
+
+.newQuestContainer {
+    padding: 10px 0;
+    .newQuest{
+        img{
+            height: 35px;
+            width: 35px;
+        }
+    }
+}

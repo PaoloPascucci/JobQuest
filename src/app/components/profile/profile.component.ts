@@ -41,6 +41,9 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
+  createNewQuest(){
+    this.router.navigate(['/new-quest']);
+  }
   checkRequest() {
     this.router.navigate(['/request']);
   }
