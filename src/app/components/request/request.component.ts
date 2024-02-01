@@ -66,8 +66,8 @@ export class RequestComponent implements OnInit {
         userId: userData.user.id,
         titolo: this.form.value.title,
         desc: this.form.value.body,
-        colore:'',
-        disabilitaBottoni:false
+        colore: '',
+        disabilitaBottoni: false,
       };
       this.questSrv.requestCreate(data).subscribe((requestPost) => {
         console.log(requestPost);
@@ -85,32 +85,34 @@ export class RequestComponent implements OnInit {
     this.questSrv.goBackHome();
   }
   accetta(request: Request) {
-    request.colore = "lime";
+    request.colore = 'lime';
     request.disabilitaBottoni = true;
-  
     // Aggiorna solo il colore nel server
-    this.questSrv.updateRequest(request.id, { colore: "lime" }).subscribe(
-      () => {
-        console.log('Colore aggiornato con successo');
-      },
-      (error) => {
-        console.error('Errore nell\'aggiornamento del colore', error);
-      }
-    );
+    this.questSrv
+      .updateRequest(request.id, { colore: 'lime', disabilitaBottoni: true })
+      .subscribe(
+        () => {
+          console.log('Colore aggiornato con successo');
+        },
+        (error) => {
+          console.error("Errore nell'aggiornamento del colore", error);
+        }
+      );
   }
-  
+
   rifiuta(request: Request) {
     request.colore = 'red';
     request.disabilitaBottoni = true;
-  
     // Aggiorna solo il colore nel server
-    this.questSrv.updateRequest(request.id, { colore: 'red' }).subscribe(
-      () => {
-        console.log('Colore aggiornato con successo');
-      },
-      (error) => {
-        console.error('Errore nell\'aggiornamento del colore', error);
-      }
-    );
+    this.questSrv
+      .updateRequest(request.id, { colore: 'red', disabilitaBottoni: true })
+      .subscribe(
+        () => {
+          console.log('Colore aggiornato con successo');
+        },
+        (error) => {
+          console.error("Errore nell'aggiornamento del colore", error);
+        }
+      );
   }
 }

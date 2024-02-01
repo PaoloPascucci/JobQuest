@@ -21,3 +21,33 @@
         }
     }
 }
+.card {
+    background-color: #ffdea7;
+    border: 2px solid #8c735b;
+    border-radius: 20px; // Bordo per aggiungere dettagli
+    &-button {
+        margin: 10px 1rem;
+    }
+
+    &-body {
+        background-color: #f8e8c3; // Colore di sfondo per simularlo come una pergamena
+        padding: 20px; // Spaziatura interna
+        border-radius: 20px;       
+        .card-title {
+            font-size: 24px; // Dimensione del titolo
+            margin-bottom: 10px; // Spaziatura dal testo sottostante
+            font-weight: bold; // Testo in grassetto
+            text-decoration: underline; // Sottolinea il titolo
+        }
+
+        .card-text,
+        .date {
+            font-size: 16px; // Dimensione del testo
+            line-height: 1.5; // Altezza della linea
+            margin-bottom: 10px; // Spaziatura dal testo sottostante
+        }
+        .card-text{height: 70px;}
+
+        // Personalizza ulteriormente a seconda delle tue esigenze
+    }
+}

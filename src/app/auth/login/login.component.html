@@ -11,6 +11,7 @@
   </div>
   <div>
     <div class="loginform container">
+      <h1 class="mb-3">Iscriviti a JobQuest</h1>
       <form #form="ngForm" (ngSubmit)="accedi(form)" class="mt-2 mb-2">
         <div class="form-group">
           <!-- <label for="email">Email</label> -->
@@ -21,8 +22,8 @@
           <input type="password" id="password" name="password" placeholder="password" required class="form-control" ngModel />
         </div>
         <div class="button-group d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Accedi</button>
-          <button class="btn btn-outline-primary account mt-3" (click)="creaAccount()">Crea nuovo account</button>
+          <button type="submit" class="btn btn-success mt-3" [disabled]="form.invalid">Accedi</button>
+          <button class="btn btn-outline-success account mt-3" (click)="creaAccount()">Crea nuovo account</button>
         </div>
       </form>
     </div>

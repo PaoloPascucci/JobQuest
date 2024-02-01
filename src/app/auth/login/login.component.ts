@@ -17,8 +17,7 @@ export class LoginComponent implements OnInit {
     //console.log(form.value);
     try {
       this.authSrv.login(form.value).subscribe();
-    } catch (error: any) {
-      alert('Login Errato');
+    } catch (error: any) {      
       console.log(error);
       this.router.navigate(['/login']);
     }
