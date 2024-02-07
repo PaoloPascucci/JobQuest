@@ -10,9 +10,6 @@ Avvia il dev server con `npm run fullstack serve`. Naviga all'interno di `http:/
 
 Compila il form di Registrazione e inizia a selezionare la tua Quest 📜 (i tuoi dati verrano salvati in locale)
 
-## Ricerca 📜
-Ricerca la Quest che più ti interessa 🔍 o la Gilda a cui iscriverti! 🛡️
-
 ## Home 📋
 Qui potrai vedere le quest principali e addentrarti nel tuo profilo 👤
 
